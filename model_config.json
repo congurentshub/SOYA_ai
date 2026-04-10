@@ -1,0 +1,24 @@
+{
+  "model_info": {
+    "name": "soybean_disease_classifier",
+    "version": "1.0",
+    "architecture": "InceptionResNetV2 + Squeeze-and-Excitation",
+    "framework": "Keras/TensorFlow"
+  },
+  "input_specs": {
+    "image_size": [299, 299],
+    "channels": 3,
+    "preprocessing": "CLAHE + tf.keras.applications.inception_resnet_v2.preprocess_input",
+    "pixel_range": [-1, 1]
+  },
+  "classes": {
+    "0": "bacterial_blight",
+    "1": "cercospora_leaf_blight",
+    "2": "frogeye",
+    "3": "healthy"
+  },
+  "inference_settings": {
+    "threshold": 0.5,
+    "apply_clahe": true
+  }
+}
